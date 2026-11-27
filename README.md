@@ -32,13 +32,17 @@ id-translate qa tests/fixtures/sample.md hasil-terjemahan/sample_ID_<waktu>/outp
 id-translate verify hasil-terjemahan/sample_ID_<waktu>
 ```
 
-Untuk pemakaian bersama AI agent, simpan [AGENTS.md](AGENTS.md) dan folder
-[skills/translate-id/](skills/translate-id/SKILL.md) di proyek Anda, lalu perintahkan agent:
-> Terjemahkan `panduan.docx` ke Bahasa Indonesia memakai skill `translate-id` dan ikuti `AGENTS.md`.
+Untuk pemakaian bersama AI agent **tanpa perlu `git clone`** (terisolasi di folder kerja sendiri):
+```bash
+id-translate setup ./terjemahan-saya
+```
+Perintah ini menyalin [AGENTS.md](AGENTS.md), penunjuk tipis untuk Claude Code/Cursor/Gemini/Copilot,
+dan [skills/translate-id/](skills/translate-id/SKILL.md) ke folder baru tanpa menimpa file yang sudah
+ada. Buka folder tersebut di AI agent Anda, taruh dokumen di `dokumen/`, lalu perintahkan agent:
+> Terjemahkan `dokumen/panduan.docx` ke Bahasa Indonesia memakai skill `translate-id` dan ikuti `AGENTS.md`.
 > Berhenti setelah glosarium dan setelah pilot untuk persetujuanku.
 
-Detail instalasi dan penunjuk tipis untuk Claude Code, Cursor, Gemini/Antigravity, dan Copilot ada di
-[docs/getting-started.md](docs/getting-started.md).
+Detail instalasi (termasuk opsi pemasangan langsung via `pip`) ada di [docs/getting-started.md](docs/getting-started.md).
 
 ## Demo terminal nyata
 
@@ -111,8 +115,7 @@ Detail lengkap kontrak segmen, lapisan abstraksi mesin PDF, dan alur checkpoint 
 
 ## Lisensi dan peringatan PyMuPDF
 
-- Lisensi repositori ini **belum ditetapkan** (menunggu keputusan pemilik; lihat
-  [docs/license-decision.md](docs/license-decision.md)).
+- Repositori ini berlisensi **MIT** (lihat [LICENSE](LICENSE)).
 - Mesin PDF bawaan memakai **PyMuPDF** sebagai dependensi **opsional** (`[pdf]`) dan **tidak
   di-vendor** di repositori ini. PyMuPDF berlisensi ganda **GNU AGPL-3.0** atau **lisensi komersial
   Artifex**. Pengguna yang memasang atau mendistribusikan extra `[pdf]` bertanggung jawab penuh

@@ -22,10 +22,16 @@ pip install -e ".[pdf]"      # PDF (PyMuPDF — AGPL-3.0 / komersial Artifex)
 > tersedia di Python 3.15. Jika instalasi `[pdf]` gagal karena `onnxruntime`, pasang wheel PyMuPDF
 > dengan `pip install --no-deps pymupdf` lalu pasang extra lain seperti biasa.
 
-## 3. Menghubungkan dengan AI agent
+## 3. Menyiapkan folder kerja agent (tanpa perlu `git clone`)
 
-Aturan tunggal ada di [AGENTS.md](../AGENTS.md). File runtime berikut sudah disediakan sebagai
-penunjuk tipis:
+Jalankan satu perintah untuk menyiapkan folder kerja terjemahan yang terisolasi di mana saja:
+
+```bash
+id-translate setup ./terjemahan-saya
+```
+
+Perintah ini menyalin [AGENTS.md](../AGENTS.md), penunjuk tipis runtime berikut, folder
+`skills/translate-id/`, dan folder kosong `dokumen/` — tanpa pernah menimpa file yang sudah ada:
 
 | Agent | Berkas |
 |---|---|
@@ -35,6 +41,7 @@ penunjuk tipis:
 | Cursor | `.cursor/rules/translate-id.mdc` |
 | GitHub Copilot | `.github/copilot-instructions.md` |
 
+Buka `./terjemahan-saya` di AI agent Anda, taruh dokumen di `dokumen/`, lalu minta agent menerjemahkan.
 Skill utama ada di `skills/translate-id/` ([SKILL.md](../skills/translate-id/SKILL.md)).
 
 ## 4. Alur kerja 5 tahap

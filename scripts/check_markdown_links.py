@@ -16,7 +16,10 @@ from urllib.parse import unquote
 FENCE_RE = re.compile(r"^\s*(`{3,}|~{3,})")
 INLINE_CODE_RE = re.compile(r"(`+)[^`]*?\1")
 MD_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)\s]+)(?:\s+[\"'][^\"']*[\"'])?\)")
-SKIP_DIRS = {".git", ".venv", "venv", "hasil-terjemahan", "__pycache__", "build", "dist", ".pytest_cache", "fixtures"}
+SKIP_DIRS = {
+    ".git", ".venv", "venv", "hasil-terjemahan", "__pycache__",
+    "build", "dist", ".pytest_cache", "fixtures", "kit_data",
+}
 
 
 def _strip_code(text: str) -> list[tuple[int, str]]:

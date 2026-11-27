@@ -4,14 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "id-translate"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "Deterministic extract/apply/QA engine so AI agents translate documents into Indonesian without overwriting sources."
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
 requires-python = ">=3.10"
-# NOTE: the `license` field is intentionally absent until the owner chooses a LICENSE (PLAN rule 4).
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -44,6 +46,16 @@ id-translate = "id_translate.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+id_translate = [
+    "kit_data/*.md",
+    "kit_data/dot_cursor/rules/*.mdc",
+    "kit_data/dot_github/*.md",
+    "kit_data/skills/translate-id/*.md",
+    "kit_data/skills/translate-id/assets/*.md",
+    "kit_data/skills/translate-id/references/*.md",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

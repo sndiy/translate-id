@@ -38,7 +38,7 @@ id-translate verify hasil-terjemahan/document_ID_<timestamp>
 
 ## License & PyMuPDF Notice
 
-- Repository license: **pending owner decision** (see [docs/license-decision.md](docs/license-decision.md)).
+- Repository license: **MIT** (see [LICENSE](LICENSE)).
 - The default PDF backend uses **PyMuPDF** as an **optional** extra (`[pdf]`), never vendored.
   PyMuPDF is dual-licensed under **GNU AGPL-3.0** or an **Artifex commercial license**; users
   installing or distributing `[pdf]` are responsible for compliance. See

@@ -1,5 +1,6 @@
 ---
 name: translate-id
+license: MIT
 description: >-
   Menerjemahkan dokumen/file apa pun ke Bahasa Indonesia secara akurat, konsisten, dan tanpa merusak
   tata letak, lalu menyimpan hasil di folder baru tanpa menimpa file asli. Gunakan skill ini setiap kali

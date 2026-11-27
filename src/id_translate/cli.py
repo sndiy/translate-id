@@ -1,6 +1,6 @@
 """Command line interface: ``id-translate <command>``.
 
-Commands: init, inspect, extract, batch, apply, compare, qa, verify, glossary-scan.
+Commands: setup, init, inspect, extract, batch, apply, compare, qa, verify, glossary-scan.
 Run ``id-translate <command> --help`` for details. Exit codes: see id_translate.errors.
 """
 
@@ -43,6 +43,25 @@ def _print(obj) -> None:
 
 
 # --------------------------------------------------------------------------- commands
+
+
+def cmd_setup(a) -> int:
+    from id_translate.setup_ws import setup_workspace
+
+    res = setup_workspace(Path(a.directory), dry_run=a.dry_run)
+    _print(
+        {
+            "workspace": str(res.target_dir),
+            "created": res.created,
+            "skipped_existing": res.skipped_existing,
+            "dry_run": res.dry_run,
+            "next_step": (
+                f"Taruh dokumen di {res.target_dir / 'dokumen'}, buka {res.target_dir} di AI agent "
+                "Anda, lalu minta agent menerjemahkan memakai skill translate-id dan AGENTS.md."
+            ),
+        }
+    )
+    return ExitCode.OK
 
 
 def cmd_init(a) -> int:
@@ -332,6 +351,15 @@ def build_parser() -> argparse.ArgumentParser:
                 parents=[common])
     p.add_argument("--version", action="version", version=f"id-translate {__version__}")
     sub = p.add_subparsers(dest="command", required=True, parser_class=_Parser)
+
+    s = sub.add_parser(
+        "setup",
+        parents=[common],
+        help="bootstrap a standalone translation folder (no git clone needed)",
+    )
+    s.add_argument("directory", nargs="?", default=".", help="target workspace folder (default: current directory)")
+    s.add_argument("--dry-run", action="store_true")
+    s.set_defaults(func=cmd_setup)
 
     s = sub.add_parser("init", parents=[common], help="create a safe result folder (NOT a git repo)")
     s.add_argument("source")
