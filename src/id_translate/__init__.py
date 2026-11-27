@@ -5,4 +5,4 @@ placeholders, re-applies translations into the original format, and checks safet
 invariants (never overwrite, SHA-256 verification, refuse encrypted inputs).
 """
 
-__version__ = "0.1.0.dev0"
+__version__ = "0.1.0"
