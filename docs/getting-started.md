@@ -8,15 +8,17 @@
 ## 2. Instalasi
 
 ```bash
-# Inti saja
-pip install -e .
+# Dari PyPI (disarankan, tanpa perlu git clone)
+pip install id-translate
 
 # Tambah dukungan format sesuai kebutuhan
-pip install -e ".[office]"   # DOCX, PPTX, XLSX (lxml)
-pip install -e ".[yaml]"     # YAML (PyYAML)
-pip install -e ".[compare]"  # Gambar perbandingan PNG (Pillow)
-pip install -e ".[pdf]"      # PDF (PyMuPDF — AGPL-3.0 / komersial Artifex)
+pip install "id-translate[office]"   # DOCX, PPTX, XLSX (lxml)
+pip install "id-translate[yaml]"     # YAML (PyYAML)
+pip install "id-translate[compare]"  # Gambar perbandingan PNG (Pillow)
+pip install "id-translate[pdf]"      # PDF (PyMuPDF — AGPL-3.0 / komersial Artifex)
 ```
+
+Untuk pengembangan dari klona repositori lokal, gunakan `pip install -e ".[dev]"`.
 
 > **Catatan Python 3.15+ dan PyMuPDF 2.2:** wheel PyMuPDF 2.2 meminta `onnxruntime` yang belum
 > tersedia di Python 3.15. Jika instalasi `[pdf]` gagal karena `onnxruntime`, pasang wheel PyMuPDF

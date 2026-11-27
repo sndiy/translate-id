@@ -10,8 +10,8 @@ description: >-
   menyebut kata "skill". Wajib dipakai juga saat pengguna menekankan "jangan ngawur", "tata letak
   jangan berantakan", atau "jangan menimpa file asli". Hanya untuk target Bahasa Indonesia.
 compatibility: >-
-  Memerlukan Python >= 3.10 dan CLI id-translate (pip install -e .). Extra opsional: [office] untuk
-  DOCX/PPTX/XLSX, [yaml] untuk YAML, [pdf] (PyMuPDF, AGPL-3.0/Artifex) untuk PDF, [compare] untuk PNG.
+  Memerlukan Python >= 3.10 dan CLI id-translate (pip install id-translate). Extra opsional: [office]
+  untuk DOCX/PPTX/XLSX, [yaml] untuk YAML, [pdf] (PyMuPDF, AGPL-3.0/Artifex) untuk PDF, [compare] untuk PNG.
 ---
 
 # translate-id — Terjemahan ke Bahasa Indonesia yang aman dan rapi

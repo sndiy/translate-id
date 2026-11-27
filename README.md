@@ -18,31 +18,31 @@ secara konsisten, dengan tata letak terjaga dan **tanpa pernah menimpa file asli
 ## Quick Start (3 langkah)
 
 ```bash
-# 1. Pasang paket inti (Python >= 3.10; tambah extra sesuai format yang dibutuhkan)
-pip install -e .
-# Opsional: pip install -e ".[office,yaml,compare]"  # dan ".[pdf]" bila perlu PDF (lihat catatan lisensi)
+# 1. Pasang paket dari PyPI (Python >= 3.10; tanpa perlu git clone)
+pip install id-translate
+# Opsional: pip install "id-translate[office,yaml,compare]"  # dan "[pdf]" bila perlu PDF (lihat catatan lisensi)
 
-# 2. Siapkan folder hasil aman dan ekstrak segmen
-id-translate init tests/fixtures/sample.md
-id-translate extract tests/fixtures/sample.md --result hasil-terjemahan/sample_ID_<waktu>
-
-# 3. Setelah model/agent mengisi work/translations/*.jsonl, terapkan, jalankan QA, lalu verifikasi
-id-translate apply --result hasil-terjemahan/sample_ID_<waktu>
-id-translate qa tests/fixtures/sample.md hasil-terjemahan/sample_ID_<waktu>/output/sample_ID.md
-id-translate verify hasil-terjemahan/sample_ID_<waktu>
-```
-
-Untuk pemakaian bersama AI agent **tanpa perlu `git clone`** (terisolasi di folder kerja sendiri):
-```bash
+# 2. Siapkan folder kerja terjemahan yang bersih, lalu taruh dokumen di folder dokumen/
 id-translate setup ./terjemahan-saya
+
+# 3. Buka ./terjemahan-saya di AI agent Anda (Codex, Claude Code, Cursor, Antigravity, Copilot)
 ```
-Perintah ini menyalin [AGENTS.md](AGENTS.md), penunjuk tipis untuk Claude Code/Cursor/Gemini/Copilot,
-dan [skills/translate-id/](skills/translate-id/SKILL.md) ke folder baru tanpa menimpa file yang sudah
-ada. Buka folder tersebut di AI agent Anda, taruh dokumen di `dokumen/`, lalu perintahkan agent:
+
+Lalu perintahkan agent:
 > Terjemahkan `dokumen/panduan.docx` ke Bahasa Indonesia memakai skill `translate-id` dan ikuti `AGENTS.md`.
 > Berhenti setelah glosarium dan setelah pilot untuk persetujuanku.
 
-Detail instalasi (termasuk opsi pemasangan langsung via `pip`) ada di [docs/getting-started.md](docs/getting-started.md).
+Untuk pemakaian CLI secara manual:
+```bash
+id-translate init dokumen/panduan.md
+id-translate extract dokumen/panduan.md --result dokumen/hasil-terjemahan/panduan_ID_<waktu>
+# Setelah model/agent mengisi work/translations/*.jsonl:
+id-translate apply --result dokumen/hasil-terjemahan/panduan_ID_<waktu>
+id-translate qa dokumen/panduan.md dokumen/hasil-terjemahan/panduan_ID_<waktu>/output/panduan_ID.md
+id-translate verify dokumen/hasil-terjemahan/panduan_ID_<waktu>
+```
+
+Detail instalasi (termasuk instalasi dari sumber lokal) ada di [docs/getting-started.md](docs/getting-started.md).
 
 ## Demo terminal nyata
 

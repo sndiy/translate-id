@@ -25,9 +25,18 @@ translates masked text segments (`work/segments.jsonl`), while `id-translate` ha
 ## Quick Start
 
 ```bash
-pip install -e .
-# Optional extras: pip install -e ".[office,yaml,compare]"  (and ".[pdf]" for PDF)
+pip install id-translate
+# Optional extras: pip install "id-translate[office,yaml,compare]"  (and "[pdf]" for PDF)
 
+# Bootstrap a clean, isolated translation workspace (no git clone needed)
+id-translate setup ./my-translations
+```
+
+Place your files in `./my-translations/dokumen/`, open `./my-translations` in your AI coding agent,
+and ask it to translate using `skills/translate-id/SKILL.md` and `AGENTS.md`.
+
+Manual CLI flow:
+```bash
 id-translate init document.md
 id-translate extract document.md --result hasil-terjemahan/document_ID_<timestamp>
 # Have the agent translate work/segments.jsonl -> work/translations/*.jsonl
