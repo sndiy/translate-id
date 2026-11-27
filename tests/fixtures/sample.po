@@ -1,0 +1,21 @@
+# Sample gettext catalog
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ui/home.py:10
+msgid "Welcome, %(name)s!"
+msgstr ""
+
+#: ui/home.py:22
+msgctxt "button"
+msgid "Save file"
+msgstr "Save file"
+
+#: ui/files.py:5
+msgid "%d file selected"
+msgid_plural "%d files selected"
+msgstr[0] ""
+msgstr[1] ""

@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "id-translate"
+version = "0.1.0.dev0"
+description = "Deterministic extract/apply/QA engine so AI agents translate documents into Indonesian without overwriting sources."
+readme = "README.md"
+requires-python = ">=3.10"
+# NOTE: the `license` field is intentionally absent until the owner chooses a LICENSE (PLAN rule 4).
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+office = ["lxml>=4.9"]
+yaml = ["PyYAML>=6.0"]
+# PyMuPDF is dual-licensed AGPL-3.0 / Artifex commercial. Optional, never vendored.
+pdf = ["pymupdf>=1.24"]
+compare = ["Pillow>=10"]
+all = ["lxml>=4.9", "PyYAML>=6.0", "pymupdf>=1.24", "Pillow>=10"]
+dev = [
+    "pytest>=7",
+    "ruff>=0.5",
+    "lxml>=4.9",
+    "PyYAML>=6.0",
+    "Pillow>=10",
+    "python-docx>=1.1",
+    "python-pptx>=0.6.23",
+    "openpyxl>=3.1",
+]
+
+[project.scripts]
+id-translate = "id_translate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+# Legacy scripts and their smoke test are migrated in Phase 2; not linted yet.
+extend-exclude = ["skills/translate-id/scripts", "tests/test_scripts.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["B905"]

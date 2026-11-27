@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "welcome": "Welcome, {name}!",
+  "@welcome": {
+    "description": "Greeting on the home screen",
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "itemCount": "{count, plural, =0{No items} one{# item} other{# items}}"
+}

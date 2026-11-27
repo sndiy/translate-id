@@ -1,0 +1,27 @@
+# Konfigurasi pre-commit (untuk dipakai kontributor lokal: `pre-commit install`).
+# Catatan: AI agent tidak menjalankan `pre-commit install` sesuai aturan git di AGENTS.md.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+        files: ^(src|tests|scripts)/
+
+  - repo: local
+    hooks:
+      - id: validate-skill
+        name: Validate Agent Skill (agentskills.io)
+        entry: python scripts/validate_skill.py
+        language: system
+        pass_filenames: false
+      - id: check-markdown-links
+        name: Check local Markdown links
+        entry: python scripts/check_markdown_links.py
+        language: system
+        pass_filenames: false
+      - id: check-licenses
+        name: Check dependency license notices
+        entry: python scripts/check_licenses.py
+        language: system
+        pass_filenames: false

@@ -1,0 +1,9 @@
+# Python >= 3.10
+# Inti (skrip inventory & qa_check untuk PDF)
+pymupdf>=1.24
+# Opsional, sesuai format yang diterjemahkan
+python-docx
+python-pptx
+openpyxl
+beautifulsoup4
+lxml

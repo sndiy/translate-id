@@ -1,0 +1,9 @@
+# Application messages
+app:
+  title: Welcome to the app
+  description: "Hello {name}, see https://example.com for help."
+  steps:
+    - Download the package
+    - Run the installer
+  count: 10
+  enabled: true

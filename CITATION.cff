@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Jika Anda merujuk perangkat lunak ini, silakan gunakan metadata berikut."
+type: software
+title: "terjemahan-id (id-translate)"
+abstract: >-
+  Panduan, skill agentskills.io, aturan AGENTS.md, dan CLI deterministik Python untuk membantu AI
+  agent menerjemahkan dokumen ke Bahasa Indonesia secara akurat dengan tata letak terjaga dan tanpa
+  menimpa berkas asli.
+version: 0.1.0-dev0
+authors:
+  - name: "Kontributor terjemahan-id"
+keywords:
+  - translation
+  - indonesian
+  - localization
+  - agent-skills
+  - agents-md
+  - cli

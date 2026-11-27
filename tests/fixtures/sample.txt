@@ -1,0 +1,9 @@
+Welcome to the sample text file.
+It has two lines in the first paragraph.
+
+    This paragraph is indented
+    and keeps its indentation on the next line.
+
+Send the file to {user} before 5 PM. See https://example.com/a.txt.
+
+12345

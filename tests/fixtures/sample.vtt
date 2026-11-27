@@ -1,0 +1,17 @@
+WEBVTT - Sample captions
+
+NOTE
+This comment block must not be translated.
+
+STYLE
+::cue {
+  color: white;
+}
+
+intro
+00:00:01.000 --> 00:00:04.500 align:start position:10%
+<v Host>Hello everyone, welcome to {course}.</v>
+
+00:05.000 --> 00:09.000
+Check <c.yellow>the guide</c> at <00:06.500>https://example.com.
+Second line of this cue.

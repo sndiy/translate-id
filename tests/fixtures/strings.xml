@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Untranslatable app id -->
+    <string name="app_id" translatable="false">com.example.demo</string>
+    <string name="welcome">It\'s ready, <b>%1$s</b>! Visit https://example.com.</string>
+    <string name="greeting">Hello <xliff:g id="user">%s</xliff:g> &amp; friends</string>
+    <string-array name="planets">
+        <item>Mercury</item>
+        <item>Venus</item>
+    </string-array>
+    <plurals name="items">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+</resources>
